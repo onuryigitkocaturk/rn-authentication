@@ -1,10 +1,11 @@
 import { StyleSheet, Text,  View, TextInput, Pressable, Image } from 'react-native';
 import React, { useState } from 'react';
+import Loading from './src/components/Loading';
 
 export default function App(){
-  const [name, setName] = useState(''); 
-  const [lastName, setLastName] = useState('');
-  const [result, setResult]= useState('');
+  const [email, setName] = useState(''); 
+  const [password, setLastName] = useState('');
+  const [isLoading,setIsLoading] = useState(false);
   
     return(
         <View style={styles.container}>
@@ -14,32 +15,38 @@ export default function App(){
             style = {styles.image}
           />
 
-          <Text>Welcome {result}</Text>
+          <Text style={styles.welcome}>Welcome</Text>
 
-              <Text>Name</Text>
+              <Text>Email</Text>
               <TextInput
-              placeholder='Enter your name'
+              inputMode='email'
+              placeholder='Enter your e-mail'
               style={styles.textInputStyle}
               onChangeText={(value)=> setName(value)}
-              value = {name}
+              value = {email}
               />
               
-              <Text>Last Name</Text>
+              <Text>Password</Text>
               <TextInput
-              placeholder='Enter your last name'
+              secureTextEntry={true}
+              placeholder='Enter your password'
               style={styles.textInputStyle}
               onChangeText={(value)=> setLastName(value)}
-              value={lastName}
+              value={password}
               />
 
               <Pressable 
-                onPress={()=> setResult(name + ' ' + lastName) }
+                onPress={()=> setIsLoading(true) }
                 style={({pressed})=> [{
                   backgroundColor: pressed ? 'gray':'blue'
                 },styles.button]}>
-                <Text style={styles.buttonText}>Save</Text>
+                <Text style={styles.buttonText}>Login</Text>
               </Pressable>
 
+              {isLoading 
+                ? <Loading changeIsLoading={()=>setIsLoading(false)}/> 
+                : null}
+          
         </View>
     );
 }
@@ -76,5 +83,9 @@ const styles = StyleSheet.create({
   image:{
     width:100,
     height:100,
+  },
+  welcome:{
+    fontWeight:'bold',
+    fontSize:26
   }
 });
