@@ -11,7 +11,7 @@ const Loading = (props) => {
         </Pressable>
        
 
-        <ActivityIndicator size={'large'} color={'blue'} />
+        <ActivityIndicator size={'large'} color={'black'} />
         <Text style={styles.loginText}>Loading...</Text>
     </View>
   )
