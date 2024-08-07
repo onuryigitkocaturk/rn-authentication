@@ -1,8 +1,7 @@
 import { StyleSheet, Text,  View, TextInput, Pressable, Image } from 'react-native';
 import React, { useState } from 'react';
-import Loading from '../components/Loading.js';
-
-const LoginPage = () => {
+import Loading from '../components/Loading';
+const LoginPage = ({navigation}) => {
   const [email, setName] = useState(''); 
   const [password, setLastName] = useState('');
   const [isLoading,setIsLoading] = useState(false);
@@ -43,10 +42,18 @@ const LoginPage = () => {
                 <Text style={styles.buttonText}>Login</Text>
               </Pressable>
 
+              <Pressable 
+                onPress={()=> navigation.navigate('SignUp')}
+                style={({pressed})=> [{
+                  backgroundColor: pressed ? 'gray':'blue',
+                  marginTop:50,
+                },styles.signupButton]}>
+                <Text style={styles.buttonText}>SignUp</Text>
+              </Pressable>
+
               {isLoading 
                 ? <Loading changeIsLoading={()=>setIsLoading(false)}/> 
                 : null}
-          
         </View>
     );
 }
@@ -89,5 +96,12 @@ const styles = StyleSheet.create({
   welcome:{
     fontWeight:'bold',
     fontSize:26
+  },
+  signupButton:{
+    width:'80%',
+    height: 50,
+    borderRadius:10,
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 });
