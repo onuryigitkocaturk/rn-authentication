@@ -1,26 +1,10 @@
-
 import React from 'react';
-import LoginPage from './src/screens/LoginPage';
-import { NavigationContainer } from '@react-navigation/native';
-import SignupPage from './src/screens/SignupPage';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import RootNavigation from './src/navigation/rootNavigation';
 
-const Stack = createNativeStackNavigator();
+
 
 const index = () => {
-  return (
-    <NavigationContainer independent={true}>
-    
-      <Stack.Navigator screenOptions={{headerShown:false}}>
-
-        <Stack.Screen name='Login' component={LoginPage}/>
-        <Stack.Screen name='SignUp' component={SignupPage}/>
-
-      </Stack.Navigator>
-
-    </NavigationContainer>
-    
-  )
+  return <RootNavigation/>
 }
 
 export default index;

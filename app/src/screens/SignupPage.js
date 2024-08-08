@@ -9,7 +9,7 @@ const SignupPage = () => {
   )
 }
 
-export default SignupPage
+export default SignupPage;
 
 const styles = StyleSheet.create({
     container:{
