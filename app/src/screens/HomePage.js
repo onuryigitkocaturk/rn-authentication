@@ -5,7 +5,7 @@ const HomePage = () => {
   return (
     <>
     <View style={styles.container}>
-      <Text>HomePage</Text>
+      <Text>Welcome to HomePage!</Text>
     </View>
     </>
   )
