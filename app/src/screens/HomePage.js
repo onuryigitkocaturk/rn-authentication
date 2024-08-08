@@ -3,9 +3,11 @@ import React from 'react'
 
 const HomePage = () => {
   return (
+    <>
     <View style={styles.container}>
       <Text>HomePage</Text>
     </View>
+    </>
   )
 };
 
