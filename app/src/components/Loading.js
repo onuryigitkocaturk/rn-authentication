@@ -25,18 +25,18 @@ const styles = StyleSheet.create({
         position:'absolute',
         width:'100%',
         height:'100%',
-        backgroundColor:'tomato',
+        backgroundColor:'white',
         alignItems: 'center',
         justifyContent:'center'
     },
     loginText:{
         fontWeight:'bold',
         fontSize:16,
-        color:'white',
+        color:'black',
         marginTop:20
     },
     closeButtonContainer:{
-         backgroundColor:'black',
+         backgroundColor:'white',
          height:50,
          width:50,
          alignItems:'center',
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
          right:30,
     },
     closeButton:{
-        color:'white',
+        color:'black',
         fontWeight:'bold',
         fontSize:16
     }

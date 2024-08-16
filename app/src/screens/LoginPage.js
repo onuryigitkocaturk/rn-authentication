@@ -10,7 +10,7 @@ const LoginPage = ({navigation}) => {
   
     return(
         <View style={styles.container}>
-        
+    
           <Text style={styles.welcome}>Welcome!</Text>
           <Image 
             source = {require('../../assets/images/loginIcon.png')}
